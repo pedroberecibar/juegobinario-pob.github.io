@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>practicando ando</title>
+</head>
+<body>
+    <div class="input-box">
+        <h1 class="title">¡Adivina el numero secreto!</h1>
+        <p>
+            Se ha generado un nuevo numero secreto entre 1 y 100... <br>
+            ¡Intente adivinarlo!
+        </p>
+    
+        <div class="form-control">
+            <input id="input" type="text" required="">
+            <label>
+                <span style="transition-delay:0ms">N</span><span style="transition-delay:50ms">u</span><span style="transition-delay:100ms">m</span><span style="transition-delay:150ms">e</span><span style="transition-delay:200ms">r</span><span style="transition-delay:250ms">o</span>
+            </label>
+        </div>
+        <div class="buttons">
+            <button id="boton_aceptar" class="button"> Aceptar</button>
+            <button id="boton_salir" class="button"> Salir</button>
+        </div>
+        <div class="resultados" id="resultados">
+            <p class="p_res">Intentos: <span id="intentos">0</span>/10</p>
+            <p class="p_res">Pista: <span id="pista">-</span></p>
+        </div>
+        
+    </div>
+<script src="main.js"></script>
+    
+</body>
+</html>
