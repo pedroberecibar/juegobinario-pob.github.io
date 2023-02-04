@@ -9,28 +9,66 @@
     <title>practicando ando</title>
 </head>
 <body>
-    <div class="input-box">
-        <h1 class="title">¡Adivina el numero secreto!</h1>
-        <p>
-            Se ha generado un nuevo numero secreto entre 1 y 100... <br>
-            ¡Intente adivinarlo!
-        </p>
+
     
-        <div class="form-control">
-            <input id="input" type="text" required="">
-            <label>
-                <span style="transition-delay:0ms">N</span><span style="transition-delay:50ms">u</span><span style="transition-delay:100ms">m</span><span style="transition-delay:150ms">e</span><span style="transition-delay:200ms">r</span><span style="transition-delay:250ms">o</span>
-            </label>
-        </div>
-        <div class="buttons">
-            <button id="boton_aceptar" class="button"> Aceptar</button>
-            <button id="boton_salir" class="button"> Salir</button>
-        </div>
-        <div class="resultados" id="resultados">
-            <p class="p_res">Intentos: <span id="intentos">0</span>/10</p>
-            <p class="p_res">Pista: <span id="pista">-</span></p>
-        </div>
+    <div class="box" id="start_window">
+        <h1 class="title">¡Adivina el numero secreto!</h1>
+        <h2>¡Bienvenido!</h2>
+        <p>
+            He realizado este sencillo juego basandome en la <b>Búsqueda Binaria</b>, un algoritmo muy utilizado a la hora de programar, el cual tiene como objetivo encontrar un valor especifico dentro de grandes volumenes de datos. Cabe aclarar que dicho algoritmo solo se puede aplicar si los datos se encuentran ordenados (de menor a mayor o viceversa). <br>
+             Este juego consta en encontrar un numero aleatorio del 1 al 100, cada vez que introduzcas un valor el juego te dará una pista. Aqui viene lo importante: <br> <b> Si aplicas el concepto de busqueda binaria tendras mas probabilidades de encontrar el numero secreto que si introduces numeros al azar. </b>
+        </p>
+        <h2>¿Como se realiza la busqueda binaria?</h2>
+        <p>
+            Comienza introduciendo un numero que se encuentre entre medio del rango 1-100 (por ejemplo: 50), luego presta atencion a la pista que te dara el juego: <br>
+            <div class="casos">
+                <ul>
+                    <li>
+                        <p>
+                            Si la pista dice que el valor ingresado es mayor que el numero secreto, realiza el mismo procedimiento pero ahora con el rango de valores comprendido entre el numero ingresado y 100, introduciendo en el proximo intento el nunmero medio de dicho rango. Siguiendo con el anterior ejemplo: 75.
+                        </p>
+                         
+                    </li>
+                    <li>
+                        <p>
+                            Por el contrario, si la pista dice que el numero ingresado es menor que el numero secreto, realiza el mismo procedimiento pero ahora con el rango de valores comprendido entre el numero ingresado y 50, introduciendo en el proximo intento el nunmero medio de dicho rango. Siguiendo con el anterior ejemplo: 25. <br>
+                            De esta forma, se descartaran muchos numeros de forma rapida teniendo mas posibilidades de encontrar el numero secreto 
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </p>
+        <h2>¡Apostemos!</h2>
+        <p>
+            Utilizando busqueda binaria, podria apostar que en la mayoria de los casos encontraras el numero secreto en menos intentos que introduciendo numeros al azar... pudiendo ganar en el sexto intento (o menos)
+        </p>
+        <h2>¡Intentalo!</h2>
+        <button id="boton_open" class="button">Jugar</button>
+    </div>
+
+
+    <div id="modal-container">
+        <div class="box">
+            <p>
+                Se ha generado un nuevo numero secreto entre 1 y 100... <br>
+                ¡Intente adivinarlo!
+            </p>
         
+            <div class="form-control">
+                <input id="input" type="text" required="">
+                <label>
+                    <span style="transition-delay:0ms">N</span><span style="transition-delay:50ms">u</span><span style="transition-delay:100ms">m</span><span style="transition-delay:150ms">e</span><span style="transition-delay:200ms">r</span><span style="transition-delay:250ms">o</span>
+                </label>
+            </div>
+            <div class="buttons">
+                <button id="boton_aceptar" class="button"> Aceptar</button>
+                <button id="boton_salir" class="button"> Salir</button>
+            </div>
+            <div class="resultados" id="resultados">
+                <p class="p_res">Intentos: <span id="intentos">0</span>/10</p>
+                <p class="p_res">Pista: <span id="pista">-</span></p>
+            </div>
+        </div>
     </div>
 <script src="main.js"></script>
     
