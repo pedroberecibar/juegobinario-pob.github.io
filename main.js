@@ -8,11 +8,21 @@ var min = 1;
 var max = 100;
 
 var numero_sec = crear_numSec(max, min);
-console.log(numero_sec);
+var playing = false;
 
 let contador = 0;
-const intentos = document.getElementById("intentos")
+const intentos = document.getElementById("intentos");
 const pista = document.getElementById("pista");
+
+const btn_jugar = document.getElementById('boton_open');
+const start_window = document.getElementById('start_window');
+const game_window = document.getElementById('modal-container');
+
+btn_jugar.addEventListener('click', ()=> {
+    playing = true;
+    start_window.style.display = 'none';
+    game_window.style.display = 'block';
+})
 
 const btn_aceptar = document.querySelector('#boton_aceptar');
 btn_aceptar.addEventListener('click', ()=> {
@@ -43,14 +53,20 @@ btn_aceptar.addEventListener('click', ()=> {
         document.getElementById("input").value = "";
 
     } else if(numero_ing < numero_sec){
-        pista.textContent = 'Erraste! El numero que ingresaste es mas Bajo que el numero secreto.';
+        pista.textContent = 'Fallaste! El numero '+ numero_ing.toString() +' es mas Bajo que el numero secreto.';
 
     } else if(numero_ing > numero_sec){
-        pista.textContent = 'Erraste! El numero que ingresaste es mas Alto que el numero secreto.';
+        pista.textContent = 'Fallaste! El numero '+ numero_ing.toString() +' es mas Alto que el numero secreto.';
     }
 })
 
 const btn_salir = document.querySelector('#boton_salir');
 btn_salir.addEventListener('click', ()=> {
-    alert('Gracias por jugar! vuelva prontoss :)');
+    playing = false
+    intentos.textContent = '0';
+    pista.textContent = '-';
+    document.getElementById("input").value = "";
+    alert('¡Gracias por jugar! :)');
+    game_window.style.display = 'none';
+    start_window.style.display = 'block';
 })
