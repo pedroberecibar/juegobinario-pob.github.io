@@ -63,6 +63,7 @@ btn_aceptar.addEventListener('click', ()=> {
 const btn_salir = document.querySelector('#boton_salir');
 btn_salir.addEventListener('click', ()=> {
     playing = false
+    contador = 0;
     intentos.textContent = '0';
     pista.textContent = '-';
     document.getElementById("input").value = "";
@@ -70,3 +71,4 @@ btn_salir.addEventListener('click', ()=> {
     game_window.style.display = 'none';
     start_window.style.display = 'block';
 })
+
