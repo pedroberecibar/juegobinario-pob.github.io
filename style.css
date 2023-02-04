@@ -24,7 +24,6 @@ p {
     margin: 10px auto;
     padding: 30px 50px;
     text-align: center;
-    text-justify: distribute;
     background-color: #ffff ;
     border-radius: 10px;
 
@@ -173,14 +172,13 @@ p {
 }
 
 
- .resultados {
-  justify-content: center;
+.resultados {
   margin-top: 50px;
  }
  /* Media */
  @media screen and (max-width: 850px){
   .button{
-      width: 50%;
+      width: 60%;
       padding: 10px 15px;
       margin: 10px auto;
       font-size: 17px;
@@ -195,4 +193,9 @@ p {
       padding: 15px 20px;
       font-size: small;
   }
+  .form-control {
+    position: relative;
+    margin: 20px auto 40px;
+    width: 50%;
  }
+}
